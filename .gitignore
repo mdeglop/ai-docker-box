@@ -7,6 +7,8 @@ __pycache__/
 
 # Workspace (AI-generated stuff, local data, etc.)
 workspace/*
+!workspace/api/
+!workspace/api/server.py
 
 # Docker
 pgdata/
