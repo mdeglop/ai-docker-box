@@ -9,6 +9,7 @@ services:
       - ./workspace:/workspace
     ports:
       - "8501:8501" # Streamlit
+      - "8000:8000" # Executor API (Flask)
     stdin_open: true
     tty: true
     # If you ever want to force x86 to match Windows exactly, you can add:

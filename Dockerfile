@@ -71,10 +71,14 @@ RUN python3 -m pip install \
 # Install Playwright browsers (Chromium)
 RUN python3 -m playwright install --with-deps chromium
 
+# Flask for executor API
+RUN python3 -m pip install flask
+
 # Workspace for AI-generated code/projects
 WORKDIR /workspace
 RUN mkdir -p /workspace
 
 EXPOSE 8501
+EXPOSE 8000
 
 CMD ["/bin/bash"]
