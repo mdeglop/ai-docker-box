@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  ai-box:
+    build: .
+    container_name: ai-box
+    working_dir: /workspace
+    volumes:
+      - ./workspace:/workspace
+    ports:
+      - "8501:8501" # Streamlit
+    stdin_open: true
+    tty: true
+    # If you ever want to force x86 to match Windows exactly, you can add:
+    # platform: linux/amd64
+
+  postgres:
+    image: postgres:15
+    container_name: ai-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: app
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

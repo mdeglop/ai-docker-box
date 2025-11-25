@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+
+# Workspace (AI-generated stuff, local data, etc.)
+workspace/*
+
+# Docker
+pgdata/
+*.log
